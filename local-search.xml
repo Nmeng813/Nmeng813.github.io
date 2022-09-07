@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>获取浏览器滚动条距离顶部位置</title>
+    <link href="/2022/09/06/vue3-scroll/"/>
+    <url>/2022/09/06/vue3-scroll/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; ref, onMounted, onUnmounted &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br>   <span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleScroll</span> () &#123;<br>     <span class="hljs-keyword">const</span> scrollTopNum = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>     <span class="hljs-keyword">const</span> <span class="hljs-title function_">Scroll</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>       <span class="hljs-keyword">const</span> top =<br>         <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span> ||<br>         <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> ||<br>         <span class="hljs-variable language_">window</span>.<span class="hljs-property">pageYOffset</span><br>       scrollTopNum.<span class="hljs-property">value</span> = top<br>     &#125;<br>     <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-title class_">Scroll</span>)<br>     &#125;)<br>     <span class="hljs-title function_">onUnmounted</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-title class_">Scroll</span>)<br>     &#125;)<br>     <span class="hljs-keyword">return</span> scrollTopNum<br>   &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vue3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hexo 使用技巧</title>
     <link href="/2022/09/01/first-blod/"/>
     <url>/2022/09/01/first-blod/</url>
