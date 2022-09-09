@@ -16,21 +16,36 @@
   <meta name="author" content="Lemon">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="友链">
-<meta property="og:url" content="http://example.com/links/index.html">
+    <meta name="description" content="vue3中如何使用百度地图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3-bMap">
+<meta property="og:url" content="http://example.com/2022/09/08/vue3-bMap/index.html">
 <meta property="og:site_name" content="Lemon">
+<meta property="og:description" content="vue3中如何使用百度地图">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/gd5.jpg">
+<meta property="article:published_time" content="2022-09-08T06:07:46.000Z">
+<meta property="article:modified_time" content="2022-09-09T01:37:15.087Z">
 <meta property="article:author" content="Lemon">
+<meta property="article:tag" content="vue3">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/gd5.jpg">
   
   
   
-  <title>友链 - Lemon</title>
+  <title>vue3-bMap - Lemon</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -204,15 +219,68 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/gd6.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.1)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="友情链接"></span>
+            <span id="subtitle" data-typed-text="vue3-bMap"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Lemon
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-08 14:07" pubdate>
+          2022年9月8日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
 
         
       </div>
@@ -228,76 +296,148 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="row links">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">vue3-bMap</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="外层盒子要有宽高"><a href="#外层盒子要有宽高" class="headerlink" title="外层盒子要有宽高"></a>外层盒子要有宽高</h2><figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">#  首先要在百度地图官网注册ak并引入 
+ &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;http:&#x2F;&#x2F;api.map.baidu.com&#x2F;api?v&#x3D;3.0&amp;ak&#x3D;QEKLPsQSGdYog7hfolki1mzjkLhdf6hX&quot;&gt;&lt;&#x2F;script&gt;</code></pre></div></figure>
+<figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">&lt;div id&#x3D;&quot;allmap&quot;&gt;&lt;&#x2F;div&gt;
+import &#123; defineComponent, nextTick, onMounted &#125; from &#39;vue&#39;
+export default defineComponent(&#123;
+  setup () &#123;
+    onMounted(() &#x3D;&gt; &#123;
+      nextTick(() &#x3D;&gt; &#123;
+        initMap()
+      &#125;)
+    &#125;)
+    const initMap &#x3D; () &#x3D;&gt; &#123;
+      const Bmap &#x3D; window.BMap
+      const map &#x3D; new Bmap.Map(&#39;allmap&#39;)
+      map.enableContinuousZoom(true) &#x2F;&#x2F; 启用地图惯性拖拽，
+      map.enableScrollWheelZoom(true) &#x2F;&#x2F; 鼠标缩放
+      const point &#x3D; new Bmap.Point(121.344358, 31.157911)
+      &#x2F;&#x2F; const myIcon &#x3D; new Bmap.Icon(&#39;..&#x2F;static&#x2F;1.png&#39;, new Bmap.Size(43, 55))
+      &#x2F;&#x2F; const marker &#x3D; new Bmap.Marker(point, &#123; icon: myIcon &#125;) &#x2F;&#x2F; 创建标注
+      const marker &#x3D; new Bmap.Marker(point) &#x2F;&#x2F; 创建标注
+      &#x2F;&#x2F; 创建文本标注对象
+      const labelopts &#x3D; &#123;
+        position: point, &#x2F;&#x2F; 指定文本标注所在的地理位置
+        offset: new Bmap.Size(0, 0) &#x2F;&#x2F; 设置文本偏移量
+      &#125;
+      const label &#x3D; new Bmap.Label(&#39;上海安垚网络科技有限公司&#39;, labelopts)
+      label.setStyle(&#123;
+        color: &#39;#fff&#39;,
+        backgroundColor: &#39;rgba(0, 0, 0, 0.5)&#39;,
+        borderRadius: &#39;10px&#39;,
+        padding: &#39;0 10px&#39;,
+        fontSize: &#39;14px&#39;,
+        lineHeight: &#39;20px&#39;,
+        border: &#39;0&#39;,
+        transform: &#39;translateX(-50%)&#39;
+      &#125;)
+      map.centerAndZoom(point, 17) &#x2F;&#x2F; 设置中心点坐标和地图级别
+      map.addOverlay(label)&#x2F;&#x2F; 坐标标识
+      map.addOverlay(marker) &#x2F;&#x2F; 将标注添加到地图中
+      marker.setAnimation((window).BMAP_ANIMATION_BOUNCE) &#x2F;&#x2F; 点动画
+      &#x2F;&#x2F; const opts &#x3D; &#123;
+      &#x2F;&#x2F;   width: 200,
+      &#x2F;&#x2F;   &#x2F;&#x2F; height: 100,
+      &#x2F;&#x2F;   title: &#39;dddd&#39;
+      &#x2F;&#x2F;   &#x2F;&#x2F; message: &#39;这里&#39;
+      &#x2F;&#x2F; &#125;
+      &#x2F;&#x2F; const infoWindow &#x3D; new Bmap.InfoWindow(&#39;地址：北京市东城区王府井大街88号乐天银泰百货八层&#39;, opts)
+      &#x2F;&#x2F; click&#x3D;&gt; mouseover
+      &#x2F;&#x2F; marker.addEventListener(&#39;click&#39;, function () &#123;
+      &#x2F;&#x2F;   map.openInfoWindow(infoWindow, point)
+      &#x2F;&#x2F; &#125;)
+    &#125;
+    return &#123;&#125;
+  &#125;
+&#125;)</code></pre></div></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading6.gif" lazyload alt="Fluid Blog"
-                   onerror="this.onerror=null; this.src=this.srcset='/img/avatar.png'"/>
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Blog</div>
-            <div class="link-intro">主题博客</div>
-          </div>
-        </div>
-      </a>
+      <span class="category-chain">
+        
+  <a href="/categories/vue/" class="category-chain-item">vue</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
     </div>
   
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/docs/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading6.gif" lazyload alt="Fluid Docs"
-                   onerror="this.onerror=null; this.src=this.srcset='/img/avatar.png'"/>
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Docs</div>
-            <div class="link-intro">主题使用指南</div>
-          </div>
-        </div>
-      </a>
-    </div>
   
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading6.gif" lazyload alt="Fluid Repo"
-                   onerror="this.onerror=null; this.src=this.srcset='/img/avatar.png'"/>
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Repo</div>
-            <div class="link-intro">主题 GitHub 仓库</div>
-          </div>
-        </div>
-      </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vue3/">#vue3</a>
+      
     </div>
   
 </div>
 
 
+              
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/08/html_onResize/" title="网页pc网站适应移动端">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">网页pc网站适应移动端</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/06/vue3-scroll/" title="获取浏览器滚动条距离顶部位置">
+                        <span class="hidden-mobile">获取浏览器滚动条距离顶部位置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
+            
   <article id="comments" lazyload>
     
   <div id="valine"></div>
@@ -326,12 +466,56 @@
   </article>
 
 
-
-              </div>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -450,6 +634,78 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script  src="https://lib.baomitu.com/prism/1.27.0/components/prism-core.min.js" ></script>
+
+  <script  src="https://lib.baomitu.com/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js" ></script>
+
+  <script  src="https://lib.baomitu.com/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.js" ></script>
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script defer src="/js/leancloud.js" ></script>
 

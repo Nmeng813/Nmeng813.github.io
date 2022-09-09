@@ -4,12 +4,68 @@
   
   
   <entry>
+    <title>网页pc网站适应移动端</title>
+    <link href="/2022/09/08/html_onResize/"/>
+    <url>/2022/09/08/html_onResize/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">&lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;0, maximum-scale&#x3D;0, user-scalable&#x3D;yes,shrink-to-fit&#x3D;no&quot;&gt;</code></pre></div></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>网页样式</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>html</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>vue3-bMap</title>
+    <link href="/2022/09/08/vue3-bMap/"/>
+    <url>/2022/09/08/vue3-bMap/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="外层盒子要有宽高"><a href="#外层盒子要有宽高" class="headerlink" title="外层盒子要有宽高"></a>外层盒子要有宽高</h2><figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">#  首先要在百度地图官网注册ak并引入  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;http:&#x2F;&#x2F;api.map.baidu.com&#x2F;api?v&#x3D;3.0&amp;ak&#x3D;QEKLPsQSGdYog7hfolki1mzjkLhdf6hX&quot;&gt;&lt;&#x2F;script&gt;</code></pre></div></figure><figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">&lt;div id&#x3D;&quot;allmap&quot;&gt;&lt;&#x2F;div&gt;import &#123; defineComponent, nextTick, onMounted &#125; from &#39;vue&#39;export default defineComponent(&#123;  setup () &#123;    onMounted(() &#x3D;&gt; &#123;      nextTick(() &#x3D;&gt; &#123;        initMap()      &#125;)    &#125;)    const initMap &#x3D; () &#x3D;&gt; &#123;      const Bmap &#x3D; window.BMap      const map &#x3D; new Bmap.Map(&#39;allmap&#39;)      map.enableContinuousZoom(true) &#x2F;&#x2F; 启用地图惯性拖拽，      map.enableScrollWheelZoom(true) &#x2F;&#x2F; 鼠标缩放      const point &#x3D; new Bmap.Point(121.344358, 31.157911)      &#x2F;&#x2F; const myIcon &#x3D; new Bmap.Icon(&#39;..&#x2F;static&#x2F;1.png&#39;, new Bmap.Size(43, 55))      &#x2F;&#x2F; const marker &#x3D; new Bmap.Marker(point, &#123; icon: myIcon &#125;) &#x2F;&#x2F; 创建标注      const marker &#x3D; new Bmap.Marker(point) &#x2F;&#x2F; 创建标注      &#x2F;&#x2F; 创建文本标注对象      const labelopts &#x3D; &#123;        position: point, &#x2F;&#x2F; 指定文本标注所在的地理位置        offset: new Bmap.Size(0, 0) &#x2F;&#x2F; 设置文本偏移量      &#125;      const label &#x3D; new Bmap.Label(&#39;上海安垚网络科技有限公司&#39;, labelopts)      label.setStyle(&#123;        color: &#39;#fff&#39;,        backgroundColor: &#39;rgba(0, 0, 0, 0.5)&#39;,        borderRadius: &#39;10px&#39;,        padding: &#39;0 10px&#39;,        fontSize: &#39;14px&#39;,        lineHeight: &#39;20px&#39;,        border: &#39;0&#39;,        transform: &#39;translateX(-50%)&#39;      &#125;)      map.centerAndZoom(point, 17) &#x2F;&#x2F; 设置中心点坐标和地图级别      map.addOverlay(label)&#x2F;&#x2F; 坐标标识      map.addOverlay(marker) &#x2F;&#x2F; 将标注添加到地图中      marker.setAnimation((window).BMAP_ANIMATION_BOUNCE) &#x2F;&#x2F; 点动画      &#x2F;&#x2F; const opts &#x3D; &#123;      &#x2F;&#x2F;   width: 200,      &#x2F;&#x2F;   &#x2F;&#x2F; height: 100,      &#x2F;&#x2F;   title: &#39;dddd&#39;      &#x2F;&#x2F;   &#x2F;&#x2F; message: &#39;这里&#39;      &#x2F;&#x2F; &#125;      &#x2F;&#x2F; const infoWindow &#x3D; new Bmap.InfoWindow(&#39;地址：北京市东城区王府井大街88号乐天银泰百货八层&#39;, opts)      &#x2F;&#x2F; click&#x3D;&gt; mouseover      &#x2F;&#x2F; marker.addEventListener(&#39;click&#39;, function () &#123;      &#x2F;&#x2F;   map.openInfoWindow(infoWindow, point)      &#x2F;&#x2F; &#125;)    &#125;    return &#123;&#125;  &#125;&#125;)</code></pre></div></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>vue</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vue3</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>获取浏览器滚动条距离顶部位置</title>
     <link href="/2022/09/06/vue3-scroll/"/>
     <url>/2022/09/06/vue3-scroll/</url>
     
-    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; ref, onMounted, onUnmounted &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br>   <span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleScroll</span> () &#123;<br>     <span class="hljs-keyword">const</span> scrollTopNum = <span class="hljs-title function_">ref</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>     <span class="hljs-keyword">const</span> <span class="hljs-title function_">Scroll</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>       <span class="hljs-keyword">const</span> top =<br>         <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">scrollTop</span> ||<br>         <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-property">scrollTop</span> ||<br>         <span class="hljs-variable language_">window</span>.<span class="hljs-property">pageYOffset</span><br>       scrollTopNum.<span class="hljs-property">value</span> = top<br>     &#125;<br>     <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-title class_">Scroll</span>)<br>     &#125;)<br>     <span class="hljs-title function_">onUnmounted</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>       <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&#x27;scroll&#x27;</span>, <span class="hljs-title class_">Scroll</span>)<br>     &#125;)<br>     <span class="hljs-keyword">return</span> scrollTopNum<br>   &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure><div class="code-wrapper"><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">import &#123; ref, onMounted, onUnmounted &#125; from &#39;vue&#39;   export function handleScroll () &#123;     const scrollTopNum &#x3D; ref(&#39;&#39;)     const Scroll &#x3D; () &#x3D;&gt; &#123;       const top &#x3D;         document.documentElement.scrollTop ||         document.body.scrollTop ||         window.pageYOffset       scrollTopNum.value &#x3D; top     &#125;     onMounted(() &#x3D;&gt; &#123;       document.addEventListener(&#39;scroll&#39;, Scroll)     &#125;)     onUnmounted(() &#x3D;&gt; &#123;       document.removeEventListener(&#39;scroll&#39;, Scroll)     &#125;)     return scrollTopNum   &#125;</code></pre></div></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>vue</category>
+      
+    </categories>
     
     
     <tags>
@@ -27,7 +83,7 @@
     <link href="/2022/09/01/first-blod/"/>
     <url>/2022/09/01/first-blod/</url>
     
-    <content type="html"><![CDATA[<!-- <div class="note note-secondary">            <p>一起来看看吧。 </p>          </div> --><h2 id="技巧一"><a href="#技巧一" class="headerlink" title="技巧一"></a>技巧一</h2><p>内容标题根据#个数来对应几级标题</p><h2 id="技巧二"><a href="#技巧二" class="headerlink" title="技巧二"></a>技巧二</h2><p>页面特效存放于_config.fluid&#x2F;custom_js</p><h2 id="技巧三"><a href="#技巧三" class="headerlink" title="技巧三"></a>技巧三</h2><li>清除静态文件：<code>hexo cl</code></li><li>生成静态文件：<code>hexo g</code></li><li>在本地运行：<code>hexo s</code></li><li>部署到网站：<code>hexo d</code></li><li>生成静态文件并部署到网站：<code>hexo d -g</code>  或 <code>hexo g -d</code> </li><li>创建新文章：<code>hexo new 'xxx'</code> 为文件名*</li><b>标题在文章中的 title 参数中修改，文件名建议全部小写，若有大写字母，部署后部分主题可能会 404</b><h2 id="技巧四"><a href="#技巧四" class="headerlink" title="技巧四"></a>技巧四</h2><p>如若想修改代码高亮 可在 <code>source/</code> 新建 <code>xxx.css</code> 在 <code>_config.fluid.yml</code>配置文件中<code>custom_css</code>属性中引入  <code>xxx.css</code></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><!-- <div class="note note-secondary">            <p>一起来看看吧。 </p>          </div> --><h2 id="技巧一"><a href="#技巧一" class="headerlink" title="技巧一"></a>技巧一</h2><p>内容标题根据#个数来对应几级标题</p><h2 id="技巧二"><a href="#技巧二" class="headerlink" title="技巧二"></a>技巧二</h2><p>页面特效存放于_config.fluid&#x2F;custom_js</p><h2 id="技巧三"><a href="#技巧三" class="headerlink" title="技巧三"></a>技巧三</h2><li>清除静态文件：<code>hexo cl</code></li><li>生成静态文件：<code>hexo g</code></li><li>在本地运行：<code>hexo s</code></li><li>部署到网站：<code>hexo d</code></li><li>生成静态文件并部署到网站：<code>hexo d -g</code>  或 <code>hexo g -d</code> </li><li>创建新文章：<code>hexo new 'xxx'</code> 为文件名*</li><b>标题在文章中的 title 参数中修改，文件名建议全部小写，若有大写字母，部署后部分主题可能会 404</b><h2 id="技巧四"><a href="#技巧四" class="headerlink" title="技巧四"></a>技巧四</h2><p>如若想修改代码高亮 可在 <code>source/</code> 新建 <code>xxx.css</code> 在 <code>_config.fluid.yml</code>配置文件中<code>custom_css</code>属性中引入  <code>xxx.css</code></p>]]></content>
     
     
     
@@ -46,7 +102,7 @@
     <link href="/2022/08/31/first-day/"/>
     <url>/2022/08/31/first-day/</url>
     
-    <content type="html"><![CDATA[<div class="note note-success">            <p>HEXO 博客今天终于搭建好了</p>          </div><p>浅浅记录一下</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note note-success">            <p>HEXO 博客今天终于搭建好了</p>          </div><p>浅浅记录一下</p>]]></content>
     
     
     
